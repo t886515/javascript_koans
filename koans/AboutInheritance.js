@@ -7,6 +7,15 @@ function Muppet(age, hobby) {
   }
 }
 
+function SwedishChef(age, hobby, mood) {
+  Muppet.call(this, age, hobby);
+  this.mood = mood;
+  
+  this.cook = function() {
+    return "Mmmm soup!";
+  }
+}
+
 
 SwedishChef.prototype = new Muppet();
 

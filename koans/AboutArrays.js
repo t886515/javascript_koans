@@ -3,7 +3,7 @@ describe("About Arrays", function() {
   //We shall contemplate truth by testing reality, via spec expectations.  
   it("should create arrays", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe('array'); //A mistake? - http:javascript.crockford.com/remedial.html
+    expect(typeof(emptyArray)).toBe('object'); //A mistake? - http:javascript.crockford.com/remedial.html
     expect(emptyArray.length).toBe(0);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
@@ -49,10 +49,10 @@ describe("About Arrays", function() {
     expect(array.slice(0, 1)).toEqual(["peanut"]);
     expect(array.slice(0, 2)).toEqual(["peanut", "butter"]);
     expect(array.slice(2, 2)).toEqual([]);
-    expect(array.slice(2, 20)).toEqual(["peanut", "butter", "and", "jelly"]);
+    expect(array.slice(2, 20)).toEqual(["and", "jelly"]);
     expect(array.slice(3, 0)).toEqual([]);
     expect(array.slice(3, 100)).toEqual(["jelly"]);
-    expect(array.slice(5, 1)).toEqual([]]);
+    expect(array.slice(5, 1)).toEqual([]);
   });
 
   it("should know array references", function () {
@@ -92,6 +92,6 @@ describe("About Arrays", function() {
     
     var shiftedValue = array.shift();
     expect(shiftedValue).toEqual(3);
-    expect(array).toEqual([1, 2]]);
+    expect(array).toEqual([1, 2]);
   });  
 });
